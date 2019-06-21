@@ -37,6 +37,47 @@
   color: palevioletred;
 }
 
+.itemImage {
+  height: 240px;
+  width: 180px;
+  padding: 10px;
+}
+ 
+.item {
+  background-color: lightgrey;
+  width: 240px;
+  height: 340px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.list {
+  display: inline-block;
+}
+
+.review {
+  background-color: lightgrey;
+  padding: 10px;
+  margin: 30px;
+  height: 200px;
+}
+
+.title{
+  padding: 5px;
+}
+
+.submit {
+  margin: 5px;
+}
+
+div.title:hover {
+  color: purple;
+}
+
+button:hover {
+  background-color: purple;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
