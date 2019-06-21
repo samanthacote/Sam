@@ -2,8 +2,6 @@ import React from 'react';
 
 export const Modal = (props) => {
     return(
-        <div className='modal'>
-        <div> {props.text} </div>
-        </div>
+        <div className='modal'> {props.text} </div>
     )
 }

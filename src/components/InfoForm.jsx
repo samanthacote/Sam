@@ -3,12 +3,12 @@ import '../App.css';
 
 export const InfoForm = (props) => {
     return(
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} name={props.name}>
           <label>
-            Add Info: 
-            <input type="text" value={props.value} onChange={props.handleChange} name={props.name}/>
+            Add A Review: 
+            <input className="submit" type="text" value={props.value} onChange={props.handleChange} name={props.name}/>
           </label>
-          <input type="submit" value="Submit"/>
+          <input className="submit" type="submit" value="Submit Review"/>
         </form>
     )
 }

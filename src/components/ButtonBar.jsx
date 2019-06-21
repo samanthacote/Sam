@@ -6,13 +6,13 @@ export const ButtonBar = (props) => {
     return(
         <div>
         <button className='button' onClick={props.handleClassicalButtonClick}>
-            Classical Ballet
+            Ballet Shoes
         </button>
         <button className='button' onClick={props.handleNeoclassicalButtonClick}>
-            Neoclassical Ballet
+            Leotards
         </button>
         <button className='button' onClick={props.handleContemporaryButtonClick}>
-            Contemporary Ballet
+            Costumes
         </button>
         </div>
     )
