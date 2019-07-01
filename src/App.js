@@ -19,12 +19,6 @@ class App extends Component {
     this.state = { 
       isLoading: false,
       view: '',
-      classicalvalue: '',
-      neoclassicalvalue: '',
-      contemporaryvalue: '',
-      classical: 'Classical ballet has training methods which often get their names by their creators.',
-      neoclassical: 'Neoclassical ballet has no strict scenery, plot and costumes and minimal set design.',
-      contemporary: 'Dance moves are bigger, fast, and so it is characterized by robust athleticism, floor work, turn-in of the legs, dancing barefoot, acting and mime.',
       shoeValue: '',
       leoValue: '',
       costumeValue: '',
@@ -75,14 +69,6 @@ class App extends Component {
     alert('A review was submitted: ' + name);
     e.preventDefault();
   }
-
-  handleTitleClick() {
-    this.setState({isLoading:true});
-    getBalletStyles().then((data) => {
-      this.setState({isLoading: false,
-      view: ''});
-    });
-  }
   
   //----------------------------------------------------------------------------//
 
@@ -99,13 +85,13 @@ class App extends Component {
     }
 
     //shoes
-    if(this.state.view === 'classical'){
+    if(this.state.view === 'shoes'){
       return(
         <div className="App">
-        <ButtonBar handleClassicalButtonClick={() => this.handleClick('classical')}
-                   handleNeoclassicalButtonClick={() => this.handleClick('neoclassical')}
-                   handleContemporaryButtonClick={() => this.handleClick('contemporary')} />
-        <ShoeList handleClick={() => this.handleTitleClick()}/>
+        <ButtonBar handleShoesButtonClick={() => this.handleClick('shoes')}
+                   handleLeoButtonClick={() => this.handleClick('leotards')}
+                   handleCostumesButtonClick={() => this.handleClick('costumes')} />
+        <ShoeList/>
         <Review text={"Please leave your review: " + this.state.shoeValue}/>
         <InfoForm handleSubmit={this.handleSubmit} value={this.state.shoeValue} name='shoeValue' handleChange={this.handleChange} />
         <RemoveButton handleRemoveClick={() => this.handleRemove('shoeValue')} /> 
@@ -115,12 +101,12 @@ class App extends Component {
     }
 
     //leotards
-    if(this.state.view === 'neoclassical'){
+    if(this.state.view === 'leotards'){
       return(
         <div className="App">
-        <ButtonBar handleClassicalButtonClick={() => this.handleClick('classical')}
-                   handleNeoclassicalButtonClick={() => this.handleClick('neoclassical')}
-                   handleContemporaryButtonClick={() => this.handleClick('contemporary')} />
+        <ButtonBar handleShoesButtonClick={() => this.handleClick('shoes')}
+                   handleLeoButtonClick={() => this.handleClick('leotards')}
+                   handleCostumesButtonClick={() => this.handleClick('costumes')} />
         <LeotardList/>
         <Review text={"Please leave your review: " + this.state.leoValue}/>
         <InfoForm handleSubmit={this.handleSubmit} value={this.state.leoValue} name='leoValue' handleChange={this.handleChange} />
@@ -131,12 +117,12 @@ class App extends Component {
     }
 
     //costumes
-    if(this.state.view === 'contemporary'){
+    if(this.state.view === 'costumes'){
       return(
         <div className="App">
-        <ButtonBar handleClassicalButtonClick={() => this.handleClick('classical')}
-                   handleNeoclassicalButtonClick={() => this.handleClick('neoclassical')}
-                   handleContemporaryButtonClick={() => this.handleClick('contemporary')} />
+        <ButtonBar handleShoesButtonClick={() => this.handleClick('shoes')}
+                   handleLeoButtonClick={() => this.handleClick('leotards')}
+                   handleCostumesButtonClick={() => this.handleClick('costumes')} />
         <CostumeList/>
         <Review text={"Please leave your review: " + this.state.costumeValue}/>
         <InfoForm handleSubmit={this.handleSubmit} value={this.state.costumeValue} name='costumeValue' handleChange={this.handleChange} />
@@ -150,11 +136,9 @@ class App extends Component {
     else return (
       <div className="App">
         <div className="form"> Click a button below to shop! </div>
-        <ButtonBar handleClassicalButtonClick={() => this.handleClick('classical')}
-                   handleNeoclassicalButtonClick={() => this.handleClick('neoclassical')}
-                   handleContemporaryButtonClick={() => this.handleClick('contemporary')} />
-        <div></div>
-        {/* <img src={balletSlippers} alt='logo'/> */}
+        <ButtonBar handleShoesButtonClick={() => this.handleClick('shoes')}
+                   handleLeoButtonClick={() => this.handleClick('leotards')}
+                   handleCostumesButtonClick={() => this.handleClick('costumes')} />
       </div>
     );
   }

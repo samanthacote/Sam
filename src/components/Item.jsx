@@ -5,7 +5,7 @@ export const Item = (props) => {
         <div className="item">
             <img src={props.im} className="itemImage" alt="logo"/>
             <div className="title" onClick={props.handleClick}>{props.title}</div> 
-            <strong>{props.price}</strong>
+            <b>{props.price}</b>
         </div>
     )
 }
