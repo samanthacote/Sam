@@ -1,8 +1,8 @@
 import React from 'react';
-import meshBack from '../images/meshBack.png';
-import longSleeve from '../images/longSleeve.png';
-import velvetRed from '../images/velvetRed.png';
-import {Item} from './Item.jsx';
+import meshBack from '../../images/meshBack.png';
+import longSleeve from '../../images/longSleeve.png';
+import velvetRed from '../../images/velvetRed.png';
+import {Item} from '../Item.jsx';
 
 export const LeotardList = () => {
     return(

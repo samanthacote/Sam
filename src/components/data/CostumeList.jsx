@@ -1,8 +1,8 @@
 import React from 'react';
-import whiteTulle from '../images/whiteTulle.png';
-import redTutu from '../images/redTutu.png';
-import lilacTutu from '../images/lilacTutu.png';
-import {Item} from './Item.jsx';
+import whiteTulle from '../../images/whiteTulle.png';
+import redTutu from '../../images/redTutu.png';
+import lilacTutu from '../../images/lilacTutu.png';
+import {Item} from '../Item.jsx';
 
 export const CostumeList = () => {
     return(

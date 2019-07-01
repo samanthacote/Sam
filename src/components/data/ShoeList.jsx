@@ -1,10 +1,10 @@
 import React from 'react';
-import flatSlippers from '../images/blochFlat.png';
-import blochPointe from '../images/blochPointe.png';
-import grishkoPointe from '../images/grishkoPointe.png';
-import {Item} from './Item.jsx';
+import flatSlippers from '../../images/blochFlat.png';
+import blochPointe from '../../images/blochPointe.png';
+import grishkoPointe from '../../images/grishkoPointe.png';
+import {Item} from '../Item.jsx';
 
-export const ShoeList = (props) => {
+export const ShoeList = () => {
     return(
         <div className="list">
             <Item im={flatSlippers} title="Bloch Womens Performa Stretch Canvas Ballet Shoes" price="$16.92"/> 
