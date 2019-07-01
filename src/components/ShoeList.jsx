@@ -7,7 +7,7 @@ import {Item} from './Item.jsx';
 export const ShoeList = (props) => {
     return(
         <div className="list">
-            <Item im={flatSlippers} title="Bloch Womens Performa Stretch Canvas Ballet Shoes" price="$16.92" handleClick={props.handleClick}/> 
+            <Item im={flatSlippers} title="Bloch Womens Performa Stretch Canvas Ballet Shoes" price="$16.92"/> 
             <Item im={blochPointe} title="Bloch Adult Balance European Pointe Shoes" price="$80.05"/> 
             <Item im={grishkoPointe} title="Grishko Adult Triumph Pointe Shoes" price="$79.46"/>    
         </div>

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import favorite from './images/favorite.png';
 
 export class LargeDisplay extends Component {
     constructor(props){
