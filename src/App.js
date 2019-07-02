@@ -12,9 +12,9 @@ const App = () => {
       <div className="App">
         <ButtonBar/>
 
-        <Route path="/shoes/" component={Shoes}/>
-        <Route path="/leotards/" component={Leotards}/>
-        <Route path="/costumes/" component={Costumes}/>
+        <Route exact path="/shoes/" component={Shoes}/>
+        <Route exact path="/leotards/" component={Leotards}/>
+        <Route exact path="/costumes/" component={Costumes}/>
 
       </div>
     </Router>
