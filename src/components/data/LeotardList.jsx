@@ -6,7 +6,7 @@ export const LeotardList = () => {
     return(
         <div>
             {leotards.map((item, index) => (
-                <Item im={item.im} title={item.title} price={item.price}/>
+                <Item key={index} im={item.im} title={item.title} price={item.price}/>
             ))}
         </div>    
     )

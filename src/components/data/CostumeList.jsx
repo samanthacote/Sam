@@ -6,7 +6,7 @@ export const CostumeList = () => {
     return(
         <div>
             {costumes.map((item, index) => (
-                <Item im={item.im} title={item.title} price={item.price}/>
+                <Item key={index} im={item.im} title={item.title} price={item.price}/>
             ))}
         </div>    
     )

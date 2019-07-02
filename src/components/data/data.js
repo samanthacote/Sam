@@ -13,25 +13,25 @@ import lilacTutuImage from '../../images/lilacTutu.png';
 
 
 //shoes *mock database* --------------------------------------
-const flatSlippers = {im: flatSlippersImage, title: "Bloch Womens Performa Stretch Canvas Ballet Shoes", price: "$16.92"}
-const blochPointe = {im: blochPointeImage, title: "Bloch Adult Balance European Pointe Shoes", price: "$80.05"}
-const grishkoPointe = {im: grishkoPointeImage, title: "Grishko Adult Triumph Pointe Shoes", price: "$79.46"}
+const flatSlippers = {im: flatSlippersImage, title: "Bloch Womens Performa Stretch Canvas Ballet Shoes", price: "$16.92", reviews: []}
+const blochPointe = {im: blochPointeImage, title: "Bloch Adult Balance European Pointe Shoes", price: "$80.05", reviews: []}
+const grishkoPointe = {im: grishkoPointeImage, title: "Grishko Adult Triumph Pointe Shoes", price: "$79.46", reviews: []}
 
 export const shoes = [flatSlippers, blochPointe, grishkoPointe];
 
 
 //leotards *mock database* -----------------------------------
-const meshBack = {im: meshBackImage, title: "Womens Compression Mesh Back Leotard", price: "$37.05"}
-const longSleeve = {im: longSleeveImage, title: "Womens Inspired Back Cutout Long Sleeve Leotard", price: "$41.18"}
-const velvetRed = {im: velvetRedImage, title: "Womens Burnout Velvet Camisole Leotard", price: "$58.53"}
+const meshBack = {im: meshBackImage, title: "Womens Compression Mesh Back Leotard", price: "$37.05", reviews: []}
+const longSleeve = {im: longSleeveImage, title: "Womens Inspired Back Cutout Long Sleeve Leotard", price: "$41.18", reviews: []}
+const velvetRed = {im: velvetRedImage, title: "Womens Burnout Velvet Camisole Leotard", price: "$58.53", reviews: []}
 
 export const leotards = [meshBack, longSleeve, velvetRed];
 
 
 //costumes *mock database* ------------------------------------
-const whiteTulle = {im: whiteTulleImage, title: "Adult 24-inch Juliet Skirt Soft Tulle", price: "$25.42"}
-const redTutu = {im: redTutuImage, title: "Womens 7-Layer Ballet Tutu Skirt", price: "$77.22"}
-const lilacTutu = {im: lilacTutuImage, title: "Adult Professional 6-Layer Platter Tutu" , price: "$124.86"}
+const whiteTulle = {im: whiteTulleImage, title: "Adult 24-inch Juliet Skirt Soft Tulle", price: "$25.42", reviews: []}
+const redTutu = {im: redTutuImage, title: "Womens 7-Layer Ballet Tutu Skirt", price: "$77.22", reviews: []}
+const lilacTutu = {im: lilacTutuImage, title: "Adult Professional 6-Layer Platter Tutu" , price: "$124.86", reviews: []}
 
 export const costumes = [whiteTulle, redTutu, lilacTutu];
 
