@@ -1,22 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import {Item} from '../Item.jsx';
-import meshBackImage from '../../images/meshBack.png';
-// import {leotards} from './data.js';
-
-// export const LeotardList = () => {
-//     return(
-//         <div>
-//             {leotards.map((item, index) => (
-//                 <Item key={index} im={item.im} title={item.title} price={item.price}/>
-//             ))}
-//         </div>    
-//     )
-// }
+// import {Review} from '../reviews/Review';
 
 export class LeotardList extends React.Component {
     state = {
-        leolist: []
+        leolist: [],
     }
 
     displayLeotards(leos) {
@@ -29,13 +18,24 @@ export class LeotardList extends React.Component {
         return leolist;
     }
 
+    displayReviews(leolist) {
+        let reviewlist = [];
+        let i = 0;
+        let j = 0;
+        for(i=0; i<leolist.length; i++){
+            for(j=0; j<leolist[i].reviews.length; j++){
+                reviewlist.push(leolist[i].reviews[j]);
+            }
+        }
+        return reviewlist;
+    }
+
     componentDidMount() {
         axios.get('http://localhost:8000/leotards')
         .then(res => {
-            const data = res.data;
-            const leos = data.leotards;
-            const newLeolist = this.displayLeotards(leos);
-            this.setState({ leolist: newLeolist });
+            console.log(res);
+            console.log(res.data);
+            this.setState({ leolist: res.data });
         })
     }
 
@@ -44,7 +44,7 @@ export class LeotardList extends React.Component {
         return(
             <div>
                 {this.state.leolist.map((item, index) => (
-                    <Item key={index} im={meshBackImage} title={item.title} price={item.price}/>
+                    <Item product={'leotards'} key={index} im={item.imgsrc} title={item.title} price={item.price} id={item.id}/>
                 ))}
             </div>
         )

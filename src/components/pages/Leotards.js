@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {LeotardList} from '../data/LeotardList';
-import {Review} from '../reviews/Review';
-import {HomeButton} from '../navigation/HomeButton';
+import {AddReview} from '../reviews/AddReview';
 import {RemoveButton} from '../reviews/RemoveButton';
 import {InfoForm} from '../reviews/InfoForm';
 
@@ -25,10 +24,9 @@ export class Leotards extends Component {
         return(
             <div className="App">
                 <LeotardList/>
-                <Review text={"Please leave your review: " + this.state.value}/>
+                <AddReview text={"Please leave your review: " + this.state.value}/>
                 <InfoForm handleSubmit={() => {alert("A review was submitted: " + this.state.value)}} value={this.state.value} handleChange={this.handleChange} />
                 <RemoveButton handleRemoveClick={() => this.setState({value: ''})} /> 
-                <HomeButton/>
             </div> 
         )
     }

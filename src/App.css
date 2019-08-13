@@ -55,7 +55,7 @@
   display: inline-block;
 }
 
-.review {
+.add-review {
   background-color: lightgrey;
   padding: 10px;
   margin: 30px;
@@ -70,6 +70,36 @@
   margin: 5px;
 }
 
+.user-image {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  align-content: flex-start;
+}
+
+.userName {
+  color: black;
+}
+
+.review {
+  display: flex;
+  width: 90%;
+  background-color: pink;
+  margin: 15px;
+}
+
+.review-form {
+  margin: 2rem;
+}
+
+.mgt-2 {
+  margin-top: 2rem;
+}
+
+.review-date {
+  margin: 10px;
+}
+
 div.title:hover {
   color: purple;
 }
@@ -78,7 +108,13 @@ button:hover {
   background-color: purple;
 }
 
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.container {
+  width: 80%;
+  border: 20px gray;
 }

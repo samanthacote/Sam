@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import {ShoeList} from '../data/ShoeList';
-import {Review} from '../reviews/Review';
-import {HomeButton} from '../navigation/HomeButton';
+import {AddReview} from '../reviews/AddReview';
 import {RemoveButton} from '../reviews/RemoveButton';
 import {InfoForm} from '../reviews/InfoForm';
 
@@ -13,6 +13,7 @@ export class Shoes extends Component {
             value: ''
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleChange.bind(this);
     }
 
     handleChange(e) {
@@ -20,14 +21,29 @@ export class Shoes extends Component {
         this.setState( {value: newValue} );
     }
 
+    handleSubmit = event => {
+        event.preventDefault();
+    
+        const review = {
+          user: "NEW user",
+          text: this.state.value,
+          date: "7/27/19",
+        };
+    
+        axios.post(`http://localhost:8000/shoes/flatSlippers/reviews/`, { review })
+          .then(res => {
+            console.log(res);
+            console.log(res.data);
+          })
+    }
+
     render() {
         return(
             <div className="App">
                 <ShoeList/>
-                <Review text={"Please leave your review: " + this.state.value}/>
-                <InfoForm handleSubmit={() => {alert("A review was submitted: " + this.state.value);}} value={this.state.value} handleChange={this.handleChange} />
+                <AddReview text={"Please leave your review: " + this.state.value}/>
+                <InfoForm handleSubmit={this.handleSubmit} value={this.state.value} handleChange={this.handleChange} />
                 <RemoveButton handleRemoveClick={() => this.setState({value: ''})} /> 
-                <HomeButton/>
             </div>
         )
     }
