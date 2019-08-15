@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Button from 'react-bootstrap/Button';
 
 export class NewReview extends React.Component {
     constructor(props) {
@@ -29,7 +30,7 @@ export class NewReview extends React.Component {
         axios.post(`http://localhost:8000/${this.props.product}/${this.props.id}/reviews/add`, 
         { user: name,
           text: text,
-          date: '8/9/2019',
+          date: '8/15/2019',
           id: 3
         }).then((res) => {
             console.log("Done!");
@@ -43,28 +44,26 @@ export class NewReview extends React.Component {
             <div className="container mgt-2">
                 <h2 style={{ textAlign: 'left'}}>Add a Review</h2>
                 <form onSubmit={this.onSubmit}>
-                    <input
-                    type="text"
-                    name="name"
-                    value={name}
-                    onChange={this.onChange}
-                    placeholder="Name"
-                    />
-                    {/* <input
-                    type="text"
-                    name="text"
-                    value={text}
-                    onChange={this.onChange}
-                    placeholder="Type your review here."
-                    className="review-form"
-                    /> */}
-                    <textarea 
-                    name="text"
-                    value={text}
-                    onChange={this.onChange}
-                    placeholder="Type your review here."
-                    />
-                    <button type="submit">Submit</button>
+                    <div style={{margin: '1rem', textAlign: 'left'}}>
+                        <input
+                        type="text"
+                        name="name"
+                        value={name}
+                        onChange={this.onChange}
+                        placeholder="Name"
+                        />
+                    </div>
+                    <div style={{margin: '1rem', textAlign: 'left'}}>
+                        <textarea 
+                        name="text"
+                        value={text}
+                        onChange={this.onChange}
+                        placeholder="Type your review here."
+                        />
+                    </div>
+                    <div style={{margin: '1rem', textAlign: 'left'}}>
+                    <Button type="submit" variant="secondary">Submit</Button>
+                    </div>
                 </form>
             </div>    
         )

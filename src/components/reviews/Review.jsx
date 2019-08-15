@@ -4,10 +4,20 @@ import { User } from './User.jsx';
 import { ReviewText } from './ReviewText.jsx';
 import { ReviewDate } from './ReviewDate.jsx';
 import userImage from '../../images/user.jpeg';
-
+import deleteImage from '../../images/trash.svg';
+import axios from 'axios';
 
 
 export const Review = (props) => {
+
+    const deleteReview = () => {
+        console.log("here in delete method!");
+        axios.delete(`http://localhost:8000/shoes/${props.id}/reviews/${props.user}/`).then((res) => {
+            console.log("Delete done!");
+        })
+    }
+
+
     return(
             <div>
             <link
@@ -21,10 +31,13 @@ export const Review = (props) => {
                     <User im={userImage} username={props.user}/>
                     <ReviewDate date={props.date}/>
                 </Card.Header>
-                <Card.Body style={{textAlign:"left"}}>
+                <Card.Body style={{textAlign: 'left'}}>
                     <Card.Text>
                         <ReviewText text={props.text} />
                     </Card.Text>
+                    <button onClick={deleteReview} style={{borderRadius: '10px'}}>
+                        <img src={deleteImage} alt='delete' className='user-image'/>
+                    </button>
                 </Card.Body>
             </Card>
             </div>

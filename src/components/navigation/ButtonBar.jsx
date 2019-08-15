@@ -17,7 +17,7 @@ export const ButtonBar = () => {
         //     </button>
         // </div>
 
-        <Navbar bg="dark" variant="dark">
+        <Navbar fixed="top" bg="dark" variant="dark">
             <Link to="/">
                 <Navbar.Brand>Dancewear</Navbar.Brand>
             </Link>

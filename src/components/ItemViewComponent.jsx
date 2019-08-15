@@ -15,7 +15,6 @@ export class ItemViewComponent extends React.Component {
         axios.get(`http://localhost:8000/${this.props.match.params.product}/${this.props.match.params.id}/reviews/`)
         .then(res => {
             const data = res.data;
-            console.log(data);
             this.setState({ reviewlist: data });
         });
 
@@ -48,7 +47,7 @@ export class ItemViewComponent extends React.Component {
                 <div className="container">
                     <h2 style={{ textAlign: 'left'}}> Reviews </h2>
                     {this.state.reviewlist.map((item, index) => (
-                        <Review key={index} text={item.text} user={item.user} date={item.date}/>
+                        <Review key={index} text={item.text} user={item.user} date={item.date} product={this.props.match.params.product} id={this.props.match.params.id}/>
                     ))}
                 </div>
                 <NewReview product={this.props.match.params.product} id={this.props.match.params.id}/>
